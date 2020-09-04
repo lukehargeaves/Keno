@@ -4,9 +4,9 @@ import { observer } from "mobx-react";
 const GridBase = observer(({ pm, cn }) => (
   <div style={cn.containingGrid}>
     {pm.grid_element.map((square) => (
-      <div>
+      <div key={square.key}
         <button
-          key={square.key}
+          
           style={square.clicked ? cn.clickedGrid : cn.gridItem}
           onClick={() => pm.onClickGrid(square.key)}
         >
